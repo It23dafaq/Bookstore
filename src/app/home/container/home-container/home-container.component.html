@@ -1,7 +1,7 @@
 <div *ngIf="books$ | async as books ">
   <div fxLayout="row wrap" fxLayoutAlign="space-evenly center"  >
     <div *ngFor="let book of books">
-      <app-book-card [data]="book"></app-book-card>
+      <app-book-card [data]="book" [isEnable]="true"></app-book-card>
     </div>
   </div>
 </div>

@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Declarations
 import {TopToolbarComponent} from './shared/components/top-toolbar/top-toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GreetingsComponent } from './greetings/greetings.component';
+import { GreetingsComponent } from './components/greetings/greetings.component';
 
 @NgModule({
   declarations: [

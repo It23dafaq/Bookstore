@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { Book} from '../../../models/book.model';
+import {Book} from '../../../models/book.model';
+import {StorageService} from '../../../services/storageService/storage.service';
+import {Keys} from '../../../models/enums/keys.enum';
 
 @Component({
   selector: 'app-book-card',
@@ -7,16 +9,20 @@ import { Book} from '../../../models/book.model';
   styleUrls: ['./book-card.component.css']
 })
 export class BookCardComponent implements OnInit {
-  @Input() data?: Book;
+  @Input() data?: Book | null | undefined ;
+  @Input() isEnable = true;
   img = 'https://material.angular.io/assets/img/examples/shiba2.jpg';
   rating = '';
   tittle = 'test';
-  constructor() { }
+
+  constructor(private storage: StorageService) { }
 
   ngOnInit(): void {
-    // this.img = this.data.img;
-     // this.tittle = this.data.title;
-    console.log("mpika");
-  }
 
+  }
+  setSelectedItem(): void {
+
+    this.storage.setSelectedBook(Keys.selected_book, this.data as Book);
+
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {BooksModel, Book} from '../../../models/book.model';
-import {BookService} from '../../../services/book.service';
+import {BookService} from '../../../services/bookService/book.service';
 
 @Component({
   selector: 'app-home-container',

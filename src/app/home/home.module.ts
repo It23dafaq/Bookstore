@@ -7,11 +7,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import {HomeRoutingModule} from './routes/home-routing.module';
+import { BookPreviewComponent } from './components/book-preview/book-preview.component';
 
 
 
 @NgModule({
-  declarations: [HomeContainerComponent],
+  declarations: [HomeContainerComponent, BookPreviewComponent],
   imports: [
     CommonModule,
     SharedModule,

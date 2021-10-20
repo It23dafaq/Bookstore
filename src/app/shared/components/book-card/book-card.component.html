@@ -1,9 +1,11 @@
-<mat-card class="example-card">
+<mat-card class="example-card"  [routerLink]="isEnable ?['category', data?.isbn] : null" (click)="setSelectedItem()">
   <img mat-card-image [src]='img' alt="Photo of a Shiba Inu">
-  <mat-card-content class="content-center">
-    <h4>
-    {{data?.title}}
-    </h4>
+  <mat-card-content class="content-center" >
+    <div *ngIf="isEnable else author">
+      <h4>
+      {{data?.title}}
+      </h4>
+    </div>
   </mat-card-content>
   <mat-card-actions class="content-center">
     <mat-icon>star</mat-icon>
@@ -13,3 +15,11 @@
     <mat-icon>star_rate</mat-icon>
   </mat-card-actions>
 </mat-card>
+<ng-template #author>
+  <div fxLayout="row" class="jcc" >
+    <mat-icon fxFlexAlign="center">account_circle</mat-icon>
+    <h4 fxFlexAlign="center">
+      {{data?.author}}
+    </h4>
+  </div>
+</ng-template>

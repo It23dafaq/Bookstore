@@ -9,6 +9,8 @@ import { MatCardModule } from '@angular/material/card';
 // exports
 import { TopToolbarComponent } from './components/top-toolbar/top-toolbar.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
+import {AppRoutingModule} from '../routes/app-routing.module';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { BookCardComponent } from './components/book-card/book-card.component';
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    RouterModule
   ]
 })
 export class SharedModule { }

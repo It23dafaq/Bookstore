@@ -1,5 +1,7 @@
 .example-card {
   max-width: 400px;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
 .content-center{
   text-align: center;
@@ -7,4 +9,11 @@
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+}
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+.jcc{
+  justify-content: center;
 }
