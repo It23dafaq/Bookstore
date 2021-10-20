@@ -21,10 +21,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { IsbnComponent } from './components/filter-items/isbn/isbn.component';
 import { FormsModule } from '@angular/forms';
 import { PagesComponent } from './components/filter-items/pages/pages.component';
+import { AddBookComponent } from './container/add-book/add-book.component';
 
 @NgModule({
   declarations: [HomeContainerComponent, BookPreviewComponent, SearchComponent, PreviewSearchComponent, FiltersComponent,
-    DatepickerComponent, IsbnComponent, PagesComponent],
+    DatepickerComponent, IsbnComponent, PagesComponent, AddBookComponent],
   imports: [
     CommonModule,
     SharedModule,
