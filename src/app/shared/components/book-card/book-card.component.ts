@@ -22,16 +22,20 @@ export class BookCardComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
   setSelectedItem(): void {
+    this.storage.setSelectedBook(Keys.selected_book, this.data as Book);
     if (this.isEnable) {
       this.storage.setSelectedBook(Keys.selected_book, this.data as Book);
     }
-    if ( this.isCategory ){
-      this.storage.setSelectedBook(Keys.selected_book, this.data as Book);
+    else if ( this.isCategory ){
       const currentUrl = this.router.url;
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate([currentUrl]);
       });
+    }else{
+      this.storage.setSelectedBook(Keys.selected_book, this.data as Book);
+      this.router.navigateByUrl(`home/category/${this.data?.isbn}`);
     }
   }
 }
