@@ -13,10 +13,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PreviewSearchComponent } from './components/preview-search/preview-search.component';
-
+import { FiltersComponent } from './components/filters/filters.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { DatepickerComponent } from './components/filter-items/datepicker/datepicker.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { IsbnComponent } from './components/filter-items/isbn/isbn.component';
+import { FormsModule } from '@angular/forms';
+import { PagesComponent } from './components/filter-items/pages/pages.component';
 
 @NgModule({
-  declarations: [HomeContainerComponent, BookPreviewComponent, SearchComponent, PreviewSearchComponent],
+  declarations: [HomeContainerComponent, BookPreviewComponent, SearchComponent, PreviewSearchComponent, FiltersComponent,
+    DatepickerComponent, IsbnComponent, PagesComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -27,7 +35,11 @@ import { PreviewSearchComponent } from './components/preview-search/preview-sear
     HomeRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

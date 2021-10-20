@@ -34,9 +34,24 @@ export class BookService {
    * @param url - address of api you want to call
    * @param id - unique key to filter data
    */
-  getSearchedBooks(url: string, id: string): void  {
+  getSearchedBooksByISBN(url: string, id: string): void  {
     if (this.books.length > 0){
       const temp = this.books.filter(books => Number(books.isbn) !== Number(id));
+      console.log(temp);
+      this.search?.next(temp);
+    }
+  }
+  /**
+   * Handle Http request
+   * Return all Books except id avoid duplicate.
+   * @param url - address of api you want to call
+   * @param key - string that can be either author|publisher|title
+   */
+  getSearchedBooks(url: string, key: string): void  {
+    if (this.books.length > 0){
+      const temp = this.books.filter(books => (books.title.toLowerCase().includes(key.toLowerCase())
+          || books.author.toLowerCase().includes(key.toLowerCase())
+          || books.publisher.toLowerCase().includes(key.toLowerCase())) );
       console.log(temp);
       this.search?.next(temp);
     }

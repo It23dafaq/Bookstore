@@ -1,0 +1,14 @@
+<mat-accordion >
+<mat-expansion-panel (opened)="panelOpenState = true"
+                     (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Filters
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div fxFlex="row" fxLayoutGap="20px">
+    <app-datepicker></app-datepicker>
+    <app-isbn></app-isbn>
+  </div>
+</mat-expansion-panel>
+</mat-accordion>
