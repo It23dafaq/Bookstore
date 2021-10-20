@@ -1,4 +1,4 @@
-<mat-card class="example-card"  [routerLink]="isEnable ?['category', data?.isbn] : null" (click)="setSelectedItem()">
+<mat-card class="example-card" [replaceUrl]="true" [routerLink]="isEnable ?['category', data?.isbn] : null" (click)="setSelectedItem()" >
   <img mat-card-image [src]='img' alt="Photo of a Shiba Inu">
   <mat-card-content class="content-center" >
     <div *ngIf="isEnable else author">
