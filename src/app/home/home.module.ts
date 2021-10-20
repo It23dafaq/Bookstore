@@ -8,11 +8,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { HomeRoutingModule } from './routes/home-routing.module';
 import { BookPreviewComponent } from './components/book-preview/book-preview.component';
-
+import { SearchComponent } from './components/search/search.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PreviewSearchComponent } from './components/preview-search/preview-search.component';
 
 
 @NgModule({
-  declarations: [HomeContainerComponent, BookPreviewComponent],
+  declarations: [HomeContainerComponent, BookPreviewComponent, SearchComponent, PreviewSearchComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -20,7 +24,10 @@ import { BookPreviewComponent } from './components/book-preview/book-preview.com
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

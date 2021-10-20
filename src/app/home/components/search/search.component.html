@@ -1,0 +1,9 @@
+<div fxLayout="column" class="container" fxLayoutAlign="space-evenly center">
+    <h3>Search to find new book</h3>
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h3>
+  <mat-form-field appearance="fill">
+    <mat-label>Search</mat-label>
+    <input matInput   (input)="searchBooks($event)" placeholder="Enter text to search" >
+  </mat-form-field>
+  <app-preview-search></app-preview-search>
+</div>

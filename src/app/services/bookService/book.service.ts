@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {from, Observable, of} from 'rxjs';
+import {BehaviorSubject, from, Observable, of, Subject} from 'rxjs';
 import {Book, BooksModel} from '../../models/book.model';
 import {HttpClient} from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import {catchError, filter, map, tap} from 'rxjs/operators';
 import {HomeModule} from '../../home/home.module';
 
 @Injectable({
@@ -10,6 +10,7 @@ import {HomeModule} from '../../home/home.module';
 })
 export class BookService {
   books: Book[] = [];
+  search = new Subject<Book[]>()  ;
   constructor(private http: HttpClient) { }
   /**
    * Handle Http request
@@ -21,10 +22,24 @@ export class BookService {
       .pipe(
         map(data => {
           this.books = data.books;
+          this.search?.next(this.books );
           return data.books;
         }),
         catchError(this.handleError<Book[]>('getBooks', [] ))
       );
+  }
+  /**
+   * Handle Http request
+   * Return all Books except id avoid duplicate.
+   * @param url - address of api you want to call
+   * @param id - unique key to filter data
+   */
+  getSearchedBooks(url: string, id: string): void  {
+    if (this.books.length > 0){
+      const temp = this.books.filter(books => Number(books.isbn) !== Number(id));
+      console.log(temp);
+      this.search?.next(temp);
+    }
   }
   /**
    * Handle Http request
