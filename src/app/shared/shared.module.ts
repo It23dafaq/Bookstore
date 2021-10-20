@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 // exports
 import { TopToolbarComponent } from './components/top-toolbar/top-toolbar.component';
@@ -29,6 +30,7 @@ import { SuggestionComponent } from './components/suggestion/suggestion.componen
     FlexLayoutModule,
     MatCardModule,
     RouterModule,
+    CarouselModule
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {from, Observable, of} from 'rxjs';
 import {Book, BooksModel} from '../../models/book.model';
 import {HttpClient} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -32,9 +32,9 @@ export class BookService {
    * @param url - address of api you want to call
    * @param id - unique key to filter data
    */
-  getSuggestionBooks(url: string, id: string): Observable<Book[]> | Book[]  {
+  getSuggestionBooks(url: string, id: string): Observable<Book[]>  {
     if (this.books.length > 0){
-       return this.books.filter(books => Number(books.isbn) !== Number(id));
+       return from([this.books.filter(books => Number(books.isbn) !== Number(id))]);
     }else {
       return this.http.get<any>('./assets/dummyData/data.json')
         .pipe(

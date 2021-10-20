@@ -1,2 +1,9 @@
-<p>suggestion works!</p>
 
+  <h3 class="suggestion-header">Other Book you May Like</h3>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let item of data | async">
+        <ng-template carouselSlide >
+          <app-book-card [isEnable]="true" [data]="item" ></app-book-card>
+        </ng-template>
+    </ng-container>
+  </owl-carousel-o>
