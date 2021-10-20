@@ -12,7 +12,7 @@ import { SearchComponent } from './components/search/search.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PreviewSearchComponent } from './components/preview-search/preview-search.component';
+import { PreviewSearchComponent } from './container/preview-search/preview-search.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { DatepickerComponent } from './components/filter-items/datepicker/datepicker.component';

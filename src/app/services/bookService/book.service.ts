@@ -3,7 +3,7 @@ import {BehaviorSubject, from, Observable, of, Subject} from 'rxjs';
 import {Book, BooksModel} from '../../models/book.model';
 import {HttpClient} from '@angular/common/http';
 import {catchError, filter, map, tap} from 'rxjs/operators';
-import {HomeModule} from '../../home/home.module';
+
 
 @Injectable({
   providedIn: 'root'
