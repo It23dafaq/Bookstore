@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
-import {HomeRoutingModule} from './routes/home-routing.module';
+import { HomeRoutingModule } from './routes/home-routing.module';
 import { BookPreviewComponent } from './components/book-preview/book-preview.component';
 
 

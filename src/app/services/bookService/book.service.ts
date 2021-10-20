@@ -9,7 +9,7 @@ import {HomeModule} from '../../home/home.module';
   providedIn: 'root'
 })
 export class BookService {
-
+  books: Book[] = [];
   constructor(private http: HttpClient) { }
   /**
    * Handle Http request
@@ -20,10 +20,30 @@ export class BookService {
     return this.http.get<any>('./assets/dummyData/data.json')
       .pipe(
         map(data => {
+          this.books = data.books;
           return data.books;
         }),
         catchError(this.handleError<Book[]>('getBooks', [] ))
       );
+  }
+  /**
+   * Handle Http request
+   * Return all Books except id avoid duplicate.
+   * @param url - address of api you want to call
+   * @param id - unique key to filter data
+   */
+  getSuggestionBooks(url: string, id: string): Observable<Book[]> | Book[]  {
+    if (this.books.length > 0){
+       return this.books.filter(books => Number(books.isbn) !== Number(id));
+    }else {
+      return this.http.get<any>('./assets/dummyData/data.json')
+        .pipe(
+          map(data => {
+            return data.books;
+          }),
+          catchError(this.handleError<Book[]>('getBooks', []))
+        );
+    }
   }
   /**
    * Handle Http operation that failed.

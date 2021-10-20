@@ -9,15 +9,17 @@ import { MatCardModule } from '@angular/material/card';
 // exports
 import { TopToolbarComponent } from './components/top-toolbar/top-toolbar.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
-import {AppRoutingModule} from '../routes/app-routing.module';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { SuggestionComponent } from './components/suggestion/suggestion.component';
+
 
 
 @NgModule({
-  declarations: [TopToolbarComponent, BookCardComponent],
+  declarations: [TopToolbarComponent, BookCardComponent, SuggestionComponent],
   exports: [
     TopToolbarComponent,
-    BookCardComponent
+    BookCardComponent,
+    SuggestionComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,7 @@ import {RouterModule} from '@angular/router';
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
-    RouterModule
+    RouterModule,
   ]
 })
 export class SharedModule { }
