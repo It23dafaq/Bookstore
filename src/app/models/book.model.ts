@@ -12,7 +12,7 @@ export interface Book {
   author: string;
   published: string;
   publisher: string;
-  page: number;
+  pages: number;
   description: string;
   website: string;
 }

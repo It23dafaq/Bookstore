@@ -4,7 +4,9 @@
   margin-bottom: 70px;
   margin-top: 50px;
 }
-
+::ng-deep .mat-form-field-wrapper{
+  width: 400px;
+}
 .mb-20px{
   margin-bottom: 20px;
 }

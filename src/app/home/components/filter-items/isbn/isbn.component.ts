@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BookService} from '../../../../services/bookService/book.service';
 
 @Component({
   selector: 'app-isbn',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IsbnComponent implements OnInit {
   value = 'Clear me';
-  constructor() { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
   }
-
+  // TODO ADDING CUSTOM VALIDATION
+  searchByISBN(): void{
+   this.bookService.getSearchedBooksByISBN(this.value.toString());
+  }
 }

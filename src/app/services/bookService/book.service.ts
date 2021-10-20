@@ -29,14 +29,26 @@ export class BookService {
       );
   }
   /**
-   * Handle Http request
-   * Return all Books except id avoid duplicate.
-   * @param url - address of api you want to call
-   * @param id - unique key to filter data
+   *
+   * Return all Books that contains pages lower than this number
+   * @param nPage - number of pages
    */
-  getSearchedBooksByISBN(url: string, id: string): void  {
+  getSearchedBooksByPages(nPage: number): void  {
+    console.log(nPage);
     if (this.books.length > 0){
-      const temp = this.books.filter(books => Number(books.isbn) !== Number(id));
+      const temp = this.books.filter(books => books.pages > nPage);
+      console.log(temp);
+      this.search?.next(temp);
+    }
+  }
+  /**
+   *
+   * Return all Books that much with ISBN.
+   * @param isbn - unique key to filter books by ISBN
+   */
+  getSearchedBooksByISBN(isbn: string): void  {
+    if (this.books.length > 0){
+      const temp = this.books.filter(books => books.isbn.includes(isbn));
       console.log(temp);
       this.search?.next(temp);
     }
