@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import {HomeRoutingModule} from './routes/home-routing.module';
+
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    HomeRoutingModule
   ]
 })
 export class HomeModule { }

@@ -1,8 +1,8 @@
 <mat-card class="example-card">
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]='img' alt="Photo of a Shiba Inu">
   <mat-card-content class="content-center">
     <h4>
-    Tittle
+    {{data?.title}}
     </h4>
   </mat-card-content>
   <mat-card-actions class="content-center">
