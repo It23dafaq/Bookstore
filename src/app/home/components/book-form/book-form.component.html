@@ -1,0 +1,99 @@
+<form  [formGroup]="bookFg" >
+  <div class="d-column">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <!--     max 120 characters min 10, allow the following special characters: @”#&*!  -->
+      <mat-label>Title</mat-label>
+      <input type="text" matInput formControlName="title" placeholder="Title">
+      <mat-error *ngIf="bookFg.hasError('minLength') || bookFg.hasError('maxLength') && !bookFg.hasError('required')">
+        Please enter max 120 characters min 10
+      </mat-error>
+      <mat-error *ngIf="bookFg.hasError('required')">
+        Title is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+      <!--    Description: max 512 characters and must start with the first letter be uppercase-->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <input type="text" matInput formControlName="description" placeholder="Description">
+      <mat-error *ngIf="bookFg.hasError('maxlength') || !bookFg.hasError('required')">
+        max 512 characters and must start with the first letter be uppercase
+      </mat-error>
+      <mat-error *ngIf="bookFg.hasError('required')">
+        Description is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <!--     : max 3 Authors (this field can be repeated)-->
+      <mat-label>Author Name</mat-label>
+      <input type="text" matInput formControlName="author_name" placeholder="Author Name">
+      <mat-error *ngIf="bookFg.hasError('email') || !bookFg.hasError('required')">
+        max 3 Authors
+      </mat-error>
+      <mat-error *ngIf="bookFg.hasError('required')">
+        Author Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+<!--      Publisher: max 60 characters min 5-->
+      <mat-label>Publisher</mat-label>
+      <input type="text" matInput formControlName="publisher" placeholder="Publisher">
+      <mat-error *ngIf="bookFg.hasError('maxLength') || bookFg.hasError('minLength') && !bookFg.hasError('required')">
+        max 60 characters min 5
+      </mat-error>
+      <mat-error *ngIf="bookFg.hasError('required')">
+        Publisher is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+    <!--      Year: 4 digits-->
+      <mat-label>Year</mat-label>
+      <input type="text" matInput formControlName="year" placeholder="Year">
+      <mat-error *ngIf="bookFg.hasError('email') && !bookFg.hasError('required')">
+        4 digits
+      </mat-error>
+      <mat-error *ngIf="bookFg.hasError('required')">
+        Year is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+    <!--      Number of pages: max 9999-->
+      <mat-label>Number of pages</mat-label>
+      <input type="number" matInput formControlName="page_number" placeholder="Number of pages">
+      <mat-error *ngIf="bookFg.hasError('email') && !bookFg.hasError('required')">
+        max 9999
+      </mat-error>
+      <mat-error *ngIf="bookFg.hasError('required')">
+        Number of pages is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="d-column text-align" >
+    <mat-form-field class="example-full-width" appearance="fill">
+      <!-- ISBN-10: 10 digits     -->
+      <mat-label>ISBN</mat-label>
+      <input type="text" matInput formControlName="isbn" placeholder="ISBN">
+      <mat-error *ngIf="bookFg.hasError('maxLength') || bookFg.hasError('minLength') || !bookFg.hasError('required')">
+       Enter 10 digits
+      </mat-error>
+      <mat-error *ngIf="bookFg.hasError('required')">
+        ISBN is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <!-- ISBN-10: 10 digits     -->
+      <mat-label>ISBN - 13</mat-label>
+      <input type="text" matInput formControlName="isbn_13" placeholder="ISBN">
+      <mat-error *ngIf="bookFg.hasError('email') && !bookFg.hasError('required')">
+        Enter 10 digits
+      </mat-error>
+      <mat-error *ngIf="bookFg.hasError('required')">
+        ISBN is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Rating</mat-label>
+      <input type="number" matInput formControlName="rating" placeholder="Rating">
+    </mat-form-field>
+  </div>
+</form>
+<button mat-raised-button (click)="addBook()">add new book</button>

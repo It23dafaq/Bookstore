@@ -7,7 +7,7 @@ import {BookService} from '../../../../services/bookService/book.service';
   styleUrls: ['./pages.component.css']
 })
 export class PagesComponent implements OnInit {
-  value = 'Clear me';
+  value = '';
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {

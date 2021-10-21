@@ -22,10 +22,11 @@ import { IsbnComponent } from './components/filter-items/isbn/isbn.component';
 import { FormsModule } from '@angular/forms';
 import { PagesComponent } from './components/filter-items/pages/pages.component';
 import { AddBookComponent } from './container/add-book/add-book.component';
+import { BookFormComponent } from './components/book-form/book-form.component';
 
 @NgModule({
   declarations: [HomeContainerComponent, BookPreviewComponent, SearchComponent, PreviewSearchComponent, FiltersComponent,
-    DatepickerComponent, IsbnComponent, PagesComponent, AddBookComponent],
+    DatepickerComponent, IsbnComponent, PagesComponent, AddBookComponent, BookFormComponent],
   imports: [
     CommonModule,
     SharedModule,

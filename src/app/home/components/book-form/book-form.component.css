@@ -1,0 +1,12 @@
+form{
+  display: flex;
+  width: 600px;
+  padding: 20px;
+}
+.d-column{
+  flex-direction: column !important;
+  margin-bottom: 20px;
+}
+.text-align{
+  text-align: end;
+}

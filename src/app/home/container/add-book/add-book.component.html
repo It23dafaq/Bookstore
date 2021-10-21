@@ -1,1 +1,6 @@
-<p>add-book works!</p>
+<form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <app-book-form></app-book-form>
+  <button type="submit"  mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" (submit)="onSubmit()" (click)="onSubmit()">
+    add Book
+  </button>
+</form>
