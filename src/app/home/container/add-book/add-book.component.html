@@ -1,6 +1,12 @@
-<form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-  <app-book-form></app-book-form>
-  <button type="submit"  mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" (submit)="onSubmit()" (click)="onSubmit()">
+
+<form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="bookForm" >
+  <ng-container *ngFor="let control of controls">
+    <div [formGroup]="control" fxFill>
+      <app-book-form></app-book-form>
+    </div>
+  </ng-container>
+  <button mat-raised-button (click)="onAddnewBook()">add new book</button>
+    <button type="submit"  mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [disabled]="!formIsValid" (submit)="onSubmit()" >
     add Book
   </button>
 </form>
