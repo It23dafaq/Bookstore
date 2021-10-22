@@ -1,12 +1,21 @@
 
 <form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="bookForm" >
   <ng-container *ngFor="let control of controls">
-    <div [formGroup]="control" fxFill>
+    <div [formGroup]="control" class="width-70">
       <app-book-form></app-book-form>
     </div>
   </ng-container>
-  <button mat-raised-button (click)="onAddnewBook()">add new book</button>
-    <button type="submit"  mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [disabled]="!formIsValid" (submit)="onSubmit()" >
-    add Book
-  </button>
+  <div fxLayout="row" fxLayoutAlign="end start" class="width-70">
+    <div fxLayout="column">
+      <button mat-icon-button class="example-icon ml-20" aria-label="Example icon-button with share icon" (click)="onAddnewBook()">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+      <p class="p-style">Add Another Book</p>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center" class="width-70">
+    <button type="submit"  mat-raised-button class="example-icon" color="primary" aria-label="Example icon-button with share icon" [disabled]="!formIsValid" (submit)="onSubmit()" >
+      add Book
+    </button>
+  </div>
 </form>

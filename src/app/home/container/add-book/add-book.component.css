@@ -1,0 +1,19 @@
+.width-70{
+  width: 70%;
+}
+.p-style{
+  text-align: center;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+mat-icon {
+  font-size: 50px;
+}
+.ml-20{
+  margin-left: 20px;
+}
+
+button[type= submit]{
+  width: 200px;
+}

@@ -1,12 +1,7 @@
-form{
-  display: flex;
-  width: 600px;
+
+.form-style{
+  background-color: aliceblue;
+  border: solid 2px mediumblue;
+  margin-bottom: 15px;
   padding: 20px;
-}
-.d-column{
-  flex-direction: column !important;
-  margin-bottom: 20px;
-}
-.text-align{
-  text-align: end;
 }
