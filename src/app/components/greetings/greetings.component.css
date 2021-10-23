@@ -1,0 +1,46 @@
+.example-ripple-container {
+  cursor: pointer;
+  text-align: center;
+
+  width: 90%;
+  height: 200px;
+  line-height: 300px;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/** Styles to make the demo look better. */
+.example-ripple-checkbox {
+  margin: 6px 12px 6px 0;
+}
+
+.example-ripple-form-field {
+  margin: 0 12px 0 0;
+}
+.bounce-in-right {
+  animation: bounce-in-right 2s ease ;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.h-style{
+  height: inherit;
+  line-height: 160px;
+}

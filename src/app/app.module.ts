@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { MatRippleModule } from '@angular/material/core';
 
 
 
@@ -31,6 +32,7 @@ import { GreetingsComponent } from './components/greetings/greetings.component';
     FlexLayoutModule,
     MatCardModule,
     HttpClientModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
