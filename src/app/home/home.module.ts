@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { PagesComponent } from './components/filter-items/pages/pages.component';
 import { AddBookComponent } from './container/add-book/add-book.component';
 import { BookFormComponent } from './components/book-form/book-form.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [HomeContainerComponent, BookPreviewComponent, SearchComponent, PreviewSearchComponent, FiltersComponent,
@@ -41,7 +42,8 @@ import { BookFormComponent } from './components/book-form/book-form.component';
     MatExpansionModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule
   ]
 })
 export class HomeModule { }
