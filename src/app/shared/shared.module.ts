@@ -12,15 +12,17 @@ import { TopToolbarComponent } from './components/top-toolbar/top-toolbar.compon
 import { BookCardComponent } from './components/book-card/book-card.component';
 import { RouterModule } from '@angular/router';
 import { SuggestionComponent } from './components/suggestion/suggestion.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [TopToolbarComponent, BookCardComponent, SuggestionComponent],
+  declarations: [TopToolbarComponent, BookCardComponent, SuggestionComponent, FooterComponent],
   exports: [
     TopToolbarComponent,
     BookCardComponent,
-    SuggestionComponent
+    SuggestionComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
