@@ -14,6 +14,10 @@ export class IsbnComponent implements OnInit {
   }
   // TODO ADDING CUSTOM VALIDATION
   searchByISBN(): void{
-   this.bookService.getSearchedBooksByISBN(this.value.toString());
+    // Temporary solution in case its null give manual value to avoid error null toString!
+    if (this.value == null){
+      this.value = '';
+    }
+    this.bookService.getSearchedBooksByISBN(this.value.toString());
   }
 }
