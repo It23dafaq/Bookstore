@@ -1,18 +1,22 @@
 import {AbstractControl, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 
-/** A hero's name can't match the given regular expression */
-export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+
+/** returns invalid if user adds greater number than given number
+ * @param nmb - number
+ */
+export function MaxValidNumber(nmb: number): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
-    const forbidden = nameRe.test(control.value);
-    return forbidden ? {forbiddenName: {value: control.value}} : null;
+    const isMax = nmb < control.value;
+    return isMax ? {maxNumberOfPage: true} : null;
   };
 }
 
-/** The description of book Input must always have the first letter Uppercase  */
-export function firstLetterUppercaseValidator(nameRe: string): ValidatorFn {
+/** returns invalid if user add more than given value words
+ * @param nmb - number
+ */
+export function MaxWords(nmb: number): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
-    const first = /^[A-Z]*$/.test(nameRe);
-    console.log(first);
-    return first ? {forbiddenName: {value: control.value}} : null;
+    const isMax = nmb < control.value.trim().split(/\s+/).length;
+    return isMax ? {maxWords: true} : null;
   };
 }
