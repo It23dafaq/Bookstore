@@ -24,10 +24,11 @@ import { PagesComponent } from './components/filter-items/pages/pages.component'
 import { AddBookComponent } from './container/add-book/add-book.component';
 import { BookFormComponent } from './components/book-form/book-form.component';
 import { MatSelectModule } from '@angular/material/select';
+import { YearComponent } from './components/filter-items/year/year.component';
 
 @NgModule({
   declarations: [HomeContainerComponent, BookPreviewComponent, SearchComponent, PreviewSearchComponent, FiltersComponent,
-    DatepickerComponent, IsbnComponent, PagesComponent, AddBookComponent, BookFormComponent],
+    DatepickerComponent, IsbnComponent, PagesComponent, AddBookComponent, BookFormComponent, YearComponent],
   imports: [
     CommonModule,
     SharedModule,
