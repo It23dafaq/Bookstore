@@ -13,6 +13,7 @@ export interface Book {
   published: string;
   publisher: string;
   pages: number;
+  categories: string [];
   description: string;
   website: string;
 }
