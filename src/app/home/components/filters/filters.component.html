@@ -6,10 +6,15 @@
       Filters
     </mat-panel-title>
   </mat-expansion-panel-header>
-  <div fxFlex="row wrap" fxLayoutGap="20px">
-    <app-datepicker></app-datepicker>
+  <div fxLayout="column">
+  <div fxLayout="row wrap" fxLayoutGap="20px">
+    <app-category></app-category>
     <app-isbn></app-isbn>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="20px">
     <app-pages></app-pages>
+    <app-year></app-year>
+  </div>
   </div>
 </mat-expansion-panel>
 </mat-accordion>
