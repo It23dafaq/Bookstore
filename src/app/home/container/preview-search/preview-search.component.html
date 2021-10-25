@@ -1,7 +1,16 @@
-<div *ngIf="data">
-  <div fxLayout="row wrap" fxLayoutAlign="space-evenly center"  >
-    <div *ngFor="let book of data">
-      <app-book-card [data]="book" [isEnable]="false" [isCategory]="false"></app-book-card>
+<div *ngIf="data"><div *ngIf="data.length>0; then show else notfound" ></div></div>
+  <ng-template #show  >
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+      <div *ngFor="let book of data">
+        <app-book-card [data]="book" [isEnable]="false" [isCategory]="false"></app-book-card>
+      </div>
     </div>
+  </ng-template>
+
+<ng-template #notfound>
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <h1>Book Not Found!</h1>
   </div>
-</div>
+</ng-template>
+
+
