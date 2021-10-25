@@ -54,6 +54,35 @@ export class BookService {
     }
   }
   /**
+   *
+   * Return all Books that much with same Category.
+   * @param categoryName - name of category you want to search with
+   */
+  getSearchedBooksByCategory(categoryName: string): void  {
+    if (this.books.length > 0){
+      const temp = this.books.filter(books => {
+        return books.categories.find(category => category.toLowerCase().includes(categoryName.toLowerCase()));
+       });
+      console.log(temp);
+      this.search?.next(temp);
+    }
+  }
+  /**
+   *
+   * Return all Books that much with specific year.
+   * @param year - date
+   */
+  getSearchedBooksByYear(year: string): void  {
+    if (this.books.length > 0){
+      const temp = this.books.filter(books => {
+        console.log(new Date(books.published).getFullYear().toString());
+        return  new Date(books.published).getFullYear().toString().includes(year);
+      });
+      console.log(temp);
+      this.search?.next(temp);
+    }
+  }
+  /**
    * Handle Http request
    * Return all Books except id avoid duplicate.
    * @param url - address of api you want to call
@@ -102,6 +131,4 @@ export class BookService {
       return of(result as T);
     };
   }
-  /** Log a HeroService message with the MessageService */
-
 }
