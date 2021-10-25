@@ -41,7 +41,7 @@ export class BookFormComponent implements OnInit {
     this.control.addControl('year', new FormControl('', [Validators.required,
       Validators.min(0), Validators.max(new Date().getFullYear()), Validators.pattern(/^[0-9]{4}$/)]));
     this.control.addControl('page_number', new FormControl('', [Validators.required, MaxValidNumber(9999), Validators.min(1)]));
-    this.control.addControl('rating', new FormControl('', [Validators.required]));
+    this.control.addControl('rating', new FormControl('1', [Validators.required]));
     this.control.addControl('isbn', new FormControl('', [Validators.required, Validators.minLength(10),
       Validators.maxLength(10), Validators.min(0)]));
     this.control.addControl('isbn_13', new FormControl('', [Validators.required, Validators.minLength(13),

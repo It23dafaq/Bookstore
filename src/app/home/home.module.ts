@@ -26,6 +26,7 @@ import { BookFormComponent } from './components/book-form/book-form.component';
 import { MatSelectModule } from '@angular/material/select';
 import { YearComponent } from './components/filter-items/year/year.component';
 import { CategoryComponent } from './components/filter-items/category/category.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [HomeContainerComponent, BookPreviewComponent, SearchComponent, PreviewSearchComponent, FiltersComponent,
@@ -45,7 +46,8 @@ import { CategoryComponent } from './components/filter-items/category/category.c
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSliderModule
   ]
 })
 export class HomeModule { }

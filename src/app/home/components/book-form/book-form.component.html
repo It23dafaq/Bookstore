@@ -101,10 +101,17 @@
         ISBN is <strong>required</strong>
       </mat-error>
     </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Rating</mat-label>
-      <input type="number" matInput formControlName="rating" placeholder="Rating">
-    </mat-form-field>
+      <div class="example-label-container example-label-vertical" >
+        <mat-label class="example-value-label">{{control.get('rating')?.value}}</mat-label>
+      </div>
+      <mat-slider
+        formControlName="rating"
+        class="example-margin"
+        max="5"
+        min="1"
+        step="1"
+       >
+      </mat-slider>
   </div>
 
 </div>
