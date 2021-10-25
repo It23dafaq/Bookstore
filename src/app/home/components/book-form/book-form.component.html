@@ -1,5 +1,5 @@
 <div class="form-style" [formGroup]="control" fxLayout="row" fxLayoutAlign="space-evenly center">
-  <div fxLayout="column">
+  <div fxLayout="column" fxLayoutGap="30px">
     <mat-form-field class="example-full-width" appearance="fill">
       <!--     max 120 characters min 10, allow the following special characters: @”#&*!  -->
       <mat-label>Title</mat-label>
@@ -67,7 +67,7 @@
       </mat-error>
     </mat-form-field>
   </div>
-  <div fxLayout="column" >
+  <div fxLayout="column" fxLayoutGap="30px">
     <mat-form-field class="example-full-width" appearance="fill">
       <!--     : max 4 categories-->
       <mat-label>Category</mat-label>
@@ -101,17 +101,19 @@
         ISBN is <strong>required</strong>
       </mat-error>
     </mat-form-field>
-      <div class="example-label-container example-label-vertical" >
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
         <mat-label class="example-value-label">{{control.get('rating')?.value}}</mat-label>
+        <mat-icon>star</mat-icon>
       </div>
       <mat-slider
         formControlName="rating"
-        class="example-margin"
         max="5"
         min="1"
         step="1"
        >
       </mat-slider>
+    </div>
   </div>
 
 </div>
