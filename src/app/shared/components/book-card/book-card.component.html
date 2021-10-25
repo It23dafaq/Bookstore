@@ -8,11 +8,7 @@
     </div>
   </mat-card-content>
   <mat-card-actions class="content-center">
-    <mat-icon>star</mat-icon>
-    <mat-icon>star</mat-icon>
-    <mat-icon>star</mat-icon>
-    <mat-icon>star_rate</mat-icon>
-    <mat-icon>star_rate</mat-icon>
+    <app-star-preview [rating]="data?.rating"></app-star-preview>
   </mat-card-actions>
 </mat-card>
 <ng-template #author>

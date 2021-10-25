@@ -23,6 +23,7 @@ export class BookService {
         map(data => {
           this.books = data.books;
           this.search?.next(this.books );
+          console.log(data.books);
           return data.books;
         }),
         catchError(this.handleError<Book[]>('getBooks', [] ))

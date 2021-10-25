@@ -13,11 +13,12 @@ import { BookCardComponent } from './components/book-card/book-card.component';
 import { RouterModule } from '@angular/router';
 import { SuggestionComponent } from './components/suggestion/suggestion.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { StarPreviewComponent } from './components/star-preview/star-preview.component';
 
 
 
 @NgModule({
-  declarations: [TopToolbarComponent, BookCardComponent, SuggestionComponent, FooterComponent],
+  declarations: [TopToolbarComponent, BookCardComponent, SuggestionComponent, FooterComponent, StarPreviewComponent],
   exports: [
     TopToolbarComponent,
     BookCardComponent,

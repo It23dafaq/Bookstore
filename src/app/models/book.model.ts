@@ -16,4 +16,5 @@ export interface Book {
   categories: string [];
   description: string;
   website: string;
+  rating: number;
 }

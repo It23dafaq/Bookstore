@@ -16,7 +16,7 @@
       </div>
       <ng-container *ngFor="let category of Book?.categories">
         <div fxLayout="row" fxFlexAlign="start">
-          <p>Category : {{category}}</p>
+          <p>Category : <strong>{{category}}</strong></p>
         </div>
       </ng-container>
       <p>Year : {{Book?.published}}</p>
