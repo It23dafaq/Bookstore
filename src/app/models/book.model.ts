@@ -7,12 +7,14 @@ export interface BooksModel {
 
 export interface Book {
   isbn: string;
+  isbn_13: string;
   title: string;
   subtitle: string;
   author: string;
   published: string;
   publisher: string;
   pages: number;
+  img: string;
   categories: string [];
   description: string;
   website: string;

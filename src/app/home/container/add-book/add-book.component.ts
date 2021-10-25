@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import {SandboxService} from '../../../services/sandbox/sandbox.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AddBookComponent implements OnInit {
   get controls(): FormGroup[]{
    return this.formArray.controls as FormGroup[];
   }
-  constructor(private fb: FormBuilder, private changeDetector: ChangeDetectorRef) { }
+  constructor(private fb: FormBuilder, private changeDetector: ChangeDetectorRef, private sandBox: SandboxService) { }
   ngOnInit(): void {
     this.formArray.push(this.fb.group({}));
     this.bookForm = this.fb.group({newBooks: this.formArray});
@@ -26,10 +27,9 @@ export class AddBookComponent implements OnInit {
     });
   }
   onSubmit(): void {
-    console.log(this.bookForm);
+    this.sandBox.addBook(this.bookForm.value.newBooks);
   }
   onAddnewBook(): void{
      this.formArray.push(this.fb.group({}, ));
-     this.changeDetector.markForCheck();
   }
 }

@@ -32,6 +32,7 @@ export class BookFormComponent implements OnInit {
   }
 
   initBooks(): void {
+    this.control.addControl('id', new FormControl(Math.random()));
     this.control.addControl('title', new FormControl(null, [Validators.maxLength(120),
       Validators.minLength(10), Validators.required, Validators.pattern(/^[ A-Za-z0-9_@./#&*!”]*$/)]));
     this.control.addControl('description', new FormControl('', [Validators.required, Validators.maxLength(512), Validators.pattern(/^[A-Z].*$/)]));

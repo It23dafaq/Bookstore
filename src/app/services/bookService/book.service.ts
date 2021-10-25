@@ -18,13 +18,13 @@ export class BookService {
    * @param url - address of api you want to call
    */
   getBooks(url: string): Observable<Book[]> {
-    return this.http.get<any>('./assets/dummyData/data.json')
+    return this.http.get<any>('http://localhost:3000/books')
       .pipe(
         map(data => {
-          this.books = data.books;
+          this.books = data;
           this.search?.next(this.books );
-          console.log(data.books);
-          return data.books;
+          console.log(data);
+          return data;
         }),
         catchError(this.handleError<Book[]>('getBooks', [] ))
       );
@@ -70,7 +70,7 @@ export class BookService {
   }
   /**
    *
-   * Return all Books that much with specific year.
+   * Return all Books that match with specific year.
    * @param year - date
    */
   getSearchedBooksByYear(year: string): void  {
@@ -117,6 +117,23 @@ export class BookService {
         );
     }
   }
+  /**
+   * Handle Http request
+   * add new Book on db
+   * @param data - new book
+   */
+  addNewBook(data: Book): Observable<any>{
+    console.log(data);
+    // data.map(book => {
+    //  return this.http.post('http://localhost:3000/books', book).pipe(
+    //     catchError(this.handleError('addHero', book))
+    //   );
+    // });
+    return this.http.post('http://localhost:3000/books', data).pipe(
+      catchError(this.handleError('addHero', data))
+   );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

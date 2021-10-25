@@ -17,7 +17,11 @@ export class BookCardComponent implements OnInit {
   rating = '';
   tittle = 'test';
 
-  constructor(private storage: StorageService, private router: Router) { }
+  constructor(private storage: StorageService, private router: Router) {
+    if (this.data?.img){
+       this.img = this.data.img;
+    }
+  }
 
   ngOnInit(): void {
 
