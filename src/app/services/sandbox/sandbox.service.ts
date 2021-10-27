@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import {BookService} from '../bookService/book.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Book} from '../../models/book.model';
-import {Observable} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +20,6 @@ export class SandboxService {
   addBook(data: Book[]): void {
     data.map(book => {
       this.bookService.addNewBook(book).subscribe(result => {
-        console.log(result);
         if (!result.error){
           this.openSnack('Book added Successfully');
         }else{

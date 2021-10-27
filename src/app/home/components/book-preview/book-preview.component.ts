@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Keys} from '../../../models/enums/keys.enum';
-import {StorageService} from '../../../services/storageService/storage.service';
-import {Book} from '../../../models/book.model';
+import { Keys } from '../../../models/enums/keys.enum';
+import { StorageService } from '../../../services/storageService/storage.service';
+import { Book } from '../../../models/book.model';
 
 @Component({
   selector: 'app-book-preview',
@@ -14,6 +14,5 @@ export class BookPreviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.Book =  this.storage.getSelectedBook(Keys.selected_book) as Book ;
-    console.log(this.Book);
   }
 }

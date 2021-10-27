@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, from, Observable, of, Subject} from 'rxjs';
-import {Book, BooksModel} from '../../models/book.model';
-import {HttpClient} from '@angular/common/http';
-import {catchError, filter, map, tap} from 'rxjs/operators';
+import { from, Observable, of, Subject} from 'rxjs';
+import { Book } from '../../models/book.model';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -23,7 +23,6 @@ export class BookService {
         map(data => {
           this.books = data;
           this.search?.next(this.books );
-          console.log(data);
           return data;
         }),
         catchError(this.handleError<Book[]>('getBooks', [] ))
@@ -35,10 +34,8 @@ export class BookService {
    * @param nPage - number of pages
    */
   getSearchedBooksByPages(nPage: number): void  {
-    console.log(nPage);
     if (this.books.length > 0){
       const temp = this.books.filter(books => books.pages > nPage);
-      console.log(temp);
       this.search?.next(temp);
     }
   }
@@ -50,7 +47,6 @@ export class BookService {
   getSearchedBooksByISBN(isbn: string): void  {
     if (this.books.length > 0){
       const temp = this.books.filter(books => books.isbn.includes(isbn));
-      console.log(temp);
       this.search?.next(temp);
     }
   }
@@ -64,7 +60,6 @@ export class BookService {
       const temp = this.books.filter(books => {
         return books.categories.find(category => category.toLowerCase().includes(categoryName.toLowerCase()));
        });
-      console.log(temp);
       this.search?.next(temp);
     }
   }
@@ -76,10 +71,8 @@ export class BookService {
   getSearchedBooksByYear(year: string): void  {
     if (this.books.length > 0){
       const temp = this.books.filter(books => {
-        console.log(new Date(books.published).getFullYear().toString());
         return  new Date(books.published).getFullYear().toString().includes(year);
       });
-      console.log(temp);
       this.search?.next(temp);
     }
   }
@@ -94,7 +87,6 @@ export class BookService {
       const temp = this.books.filter(books => (books.title.toLowerCase().includes(key.toLowerCase())
           || books.author.toLowerCase().includes(key.toLowerCase())
           || books.publisher.toLowerCase().includes(key.toLowerCase())) );
-      console.log(temp);
       this.search?.next(temp);
     }
   }
@@ -123,7 +115,6 @@ export class BookService {
    * @param data - new book
    */
   addNewBook(data: Book): Observable<any>{
-    console.log(data);
     // data.map(book => {
     //  return this.http.post('http://localhost:3000/books', book).pipe(
     //     catchError(this.handleError('addHero', book))

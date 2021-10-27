@@ -13,7 +13,6 @@ export class StarPreviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.rating as number);
     this.stars = new Array<number>(this.rating as number);
     this.left = new Array<number>(5 - (this.rating as number));
   }

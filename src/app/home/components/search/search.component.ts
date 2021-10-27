@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, Validators} from '@angular/forms';
 import {BookService} from '../../../services/bookService/book.service';
 
 @Component({
@@ -9,13 +9,12 @@ import {BookService} from '../../../services/bookService/book.service';
 })
 export class SearchComponent implements OnInit {
   search = new FormControl('', [Validators.required, Validators.email]);
-  constructor(private bookservice: BookService) { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
   }
  searchBooks(event: any): void{
-      console.log((event.target as HTMLInputElement).value);
       const value = (event.target as HTMLInputElement).value;
-      this.bookservice.getSearchedBooks('', value);
+      this.bookService.getSearchedBooks('', value);
  }
 }
