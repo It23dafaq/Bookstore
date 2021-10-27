@@ -82,8 +82,8 @@
     <mat-form-field class="example-full-width" appearance="fill">
       <!-- ISBN-10: 10 digits     -->
       <mat-label>ISBN</mat-label>
-      <input type="text" matInput formControlName="isbn" placeholder="ISBN">
-      <mat-error *ngIf="control.get('isbn')?.hasError('maxlength') || control.get('isbn')?.hasError('minlength') || control.get('isbn')?.hasError('min') && !control.get('isbn')?.hasError('required')">
+      <input type="number" matInput formControlName="isbn" placeholder="ISBN">
+      <mat-error *ngIf="control.get('isbn')?.hasError('pattern') && !control.get('isbn')?.hasError('required')">
        Enter 10 digits and only positive number
       </mat-error>
       <mat-error *ngIf="control.get('isbn')?.hasError('required')">
@@ -93,8 +93,8 @@
     <mat-form-field class="example-full-width" appearance="fill">
       <!-- ISBN-10: 10 digits     -->
       <mat-label>ISBN - 13</mat-label>
-      <input type="text" matInput formControlName="isbn_13" placeholder="ISBN">
-      <mat-error *ngIf="control.get('isbn_13')?.hasError('maxlength') || control.get('isbn_13')?.hasError('minlength') || control.get('isbn_13')?.hasError('min') && !control.get('isbn_13')?.hasError('required')">
+      <input type="number" matInput formControlName="isbn_13" placeholder="ISBN">
+      <mat-error *ngIf="control.get('isbn_13')?.hasError('pattern')  && !control.get('isbn_13')?.hasError('required')">
         Enter 13 digits  and only positive number
       </mat-error>
       <mat-error *ngIf="control.get('isbn_13')?.hasError('required')">

@@ -3,6 +3,7 @@ import { from, Observable, of, Subject} from 'rxjs';
 import { Book } from '../../models/book.model';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
+import {MapService} from '../mapService/map.service';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { catchError, map } from 'rxjs/operators';
 export class BookService {
   books: Book[] = [];
   search = new Subject<Book[]>()  ;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private mapService: MapService) { }
   /**
    * Handle Http request
    * Return all Books.
@@ -115,19 +116,11 @@ export class BookService {
    * @param data - new book
    */
   addNewBook(data: Book): Observable<any>{
-    console.log(data);
-    this.mapCategories(data);
-    console.log(data);
-    return this.http.post('http://localhost:3000/books', data).pipe(
+    const form = this.mapService.mapBooks(data);
+    console.log(form);
+    return this.http.post('http://localhost:3000/books', form).pipe(
       catchError(this.handleError('addBook', data))
    );
-  }
-  /**
-   * return array of categories
-   * @param data - type Book
-   */
-  mapCategories(data: Book): string[]{
-    return data.categories = (data.categories  as string).split(' ', 4);
   }
   /**
    * Handle Http operation that failed.

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Keys } from '../../../models/enums/keys.enum';
 import { StorageService } from '../../../services/storageService/storage.service';
 import { Book } from '../../../models/book.model';
-import {log} from 'util';
+
 
 @Component({
   selector: 'app-book-preview',
@@ -10,7 +10,10 @@ import {log} from 'util';
   styleUrls: ['./book-preview.component.css']
 })
 export class BookPreviewComponent implements OnInit {
-  Book: null | Book | undefined = null;
+  Book!: Book;
+  get BookCategories(): any[]{
+    return this.Book?.categories as string [];
+  }
   constructor(private storage: StorageService) { }
 
   ngOnInit(): void {
