@@ -15,7 +15,7 @@ export interface Book {
   publisher: string;
   pages: number;
   img: string;
-  categories: string [];
+  categories: string [] | string;
   description: string;
   website: string;
   rating: number;

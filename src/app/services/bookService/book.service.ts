@@ -58,7 +58,7 @@ export class BookService {
   getSearchedBooksByCategory(categoryName: string): void  {
     if (this.books.length > 0){
       const temp = this.books.filter(books => {
-        return books.categories.find(category => category.toLowerCase().includes(categoryName.toLowerCase()));
+        return (books.categories as string []).find(category => category.toLowerCase().includes(categoryName.toLowerCase()));
        });
       this.search?.next(temp);
     }
@@ -115,16 +115,20 @@ export class BookService {
    * @param data - new book
    */
   addNewBook(data: Book): Observable<any>{
-    // data.map(book => {
-    //  return this.http.post('http://localhost:3000/books', book).pipe(
-    //     catchError(this.handleError('addHero', book))
-    //   );
-    // });
+    console.log(data);
+    this.mapCategories(data);
+    console.log(data);
     return this.http.post('http://localhost:3000/books', data).pipe(
-      catchError(this.handleError('addHero', data))
+      catchError(this.handleError('addBook', data))
    );
   }
-
+  /**
+   * return array of categories
+   * @param data - type Book
+   */
+  mapCategories(data: Book): string[]{
+    return data.categories = (data.categories  as string).split(' ', 4);
+  }
   /**
    * Handle Http operation that failed.
    * Let the app continue.
