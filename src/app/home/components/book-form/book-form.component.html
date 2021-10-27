@@ -14,22 +14,22 @@
       <!--    Description: max 512 characters and must start with the first letter be uppercase-->
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Description</mat-label>
-      <input type="text" matInput formControlName="subtitle" placeholder="Description">
-      <mat-error *ngIf="control.get('subtitle')?.hasError('maxlength') || control.get('subtitle')?.hasError('pattern') || !control.get('subtitle')?.hasError('required')">
+      <input type="text" matInput formControlName="description" placeholder="Description">
+      <mat-error *ngIf="control.get('description')?.hasError('maxlength') || control.get('description')?.hasError('pattern') || !control.get('description')?.hasError('required')">
         max 512 characters and must start with the first letter be uppercase
       </mat-error>
-      <mat-error *ngIf="control.get('subtitle')?.hasError('required')">
+      <mat-error *ngIf="control.get('description')?.hasError('required')">
         Description is <strong>required</strong>
       </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">
       <!--     : max 3 Authors (this field can be repeated)-->
       <mat-label>Author Name</mat-label>
-      <input type="text" matInput formControlName="author_name" placeholder="Author Name">
-      <mat-error *ngIf="control.get('author_name')?.hasError('maxWords') && !control.get('author_name')?.hasError('required')">
+      <input type="text" matInput formControlName="author" placeholder="Author Name">
+      <mat-error *ngIf="control.get('author')?.hasError('maxWords') && !control.get('author')?.hasError('required')">
         max 3 Author Names
       </mat-error>
-      <mat-error *ngIf="control.get('author_name')?.hasError('required')">
+      <mat-error *ngIf="control.get('author')?.hasError('required')">
         Author Name is <strong>required</strong>
       </mat-error>
     </mat-form-field>
@@ -71,11 +71,11 @@
     <mat-form-field class="example-full-width" appearance="fill">
       <!--     : max 4 categories-->
       <mat-label>Category</mat-label>
-      <input type="text" matInput formControlName="category" placeholder="Categories">
-      <mat-error *ngIf="control.get('category')?.hasError('maxWords') && !control.get('category')?.hasError('required')">
+      <input type="text" matInput formControlName="categories" placeholder="Categories">
+      <mat-error *ngIf="control.get('categories')?.hasError('maxWords') && !control.get('categories')?.hasError('required')">
         max 4 categories per book
       </mat-error>
-      <mat-error *ngIf="control.get('category')?.hasError('required')">
+      <mat-error *ngIf="control.get('categories')?.hasError('required')">
         Categories is <strong>required</strong>
       </mat-error>
     </mat-form-field>

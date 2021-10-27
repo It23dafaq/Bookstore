@@ -14,11 +14,14 @@
           <mat-icon>share</mat-icon>
         </button>
       </div>
-      <ng-container *ngFor="let category of Book?.categories">
-        <div fxLayout="row" fxFlexAlign="start">
-          <p>Category : <strong>{{category}}</strong></p>
+      <div fxLayout="row" fxFlexAlign="start">
+        <div fxLayout="row" fxFlexAlign="start center">
+          <p>Category : </p>
         </div>
-      </ng-container>
+        <div fxLayout="row" fxLayoutAlign="start center" *ngFor="let category of Book?.categories">
+          <strong>{{category}}</strong>
+        </div>
+      </div>
       <p>Year : {{Book?.published}}</p>
       <p>Number of pages : {{Book?.pages}}</p>
       <p>Publisher : {{Book?.publisher}}</p>
