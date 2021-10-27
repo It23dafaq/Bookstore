@@ -14,11 +14,11 @@
       <!--    Description: max 512 characters and must start with the first letter be uppercase-->
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Description</mat-label>
-      <input type="text" matInput formControlName="description" placeholder="Description">
-      <mat-error *ngIf="control.get('description')?.hasError('maxlength') || control.get('description')?.hasError('pattern') || !control.get('description')?.hasError('required')">
+      <input type="text" matInput formControlName="subtitle" placeholder="Description">
+      <mat-error *ngIf="control.get('subtitle')?.hasError('maxlength') || control.get('subtitle')?.hasError('pattern') || !control.get('subtitle')?.hasError('required')">
         max 512 characters and must start with the first letter be uppercase
       </mat-error>
-      <mat-error *ngIf="control.get('description')?.hasError('required')">
+      <mat-error *ngIf="control.get('subtitle')?.hasError('required')">
         Description is <strong>required</strong>
       </mat-error>
     </mat-form-field>
@@ -47,22 +47,22 @@
     <mat-form-field class="example-full-width" appearance="fill">
     <!--      Year: 4 digits-->
       <mat-label>Year</mat-label>
-      <input type="number"  matInput formControlName="year" placeholder="Year" >
-      <mat-error *ngIf="control.get('year')?.hasError('pattern') || control.get('year')?.hasError('max') && !control.get('year')?.hasError('required')">
+      <input type="number"  matInput formControlName="published" placeholder="Year" >
+      <mat-error *ngIf="control.get('published')?.hasError('pattern') || control.get('published')?.hasError('max') && !control.get('published')?.hasError('required')">
         only positive numbers and exact 4 digits
       </mat-error>
-      <mat-error *ngIf="control.get('year')?.hasError('required')">
+      <mat-error *ngIf="control.get('published')?.hasError('required')">
         Year is <strong>required</strong>
       </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">
     <!--      Number of pages: max 9999-->
       <mat-label>Number of pages</mat-label>
-      <input type="number" matInput formControlName="page_number" placeholder="Number of pages">
-      <mat-error *ngIf="control.get('page_number')?.hasError('maxNumberOfPage') || control.get('page_number')?.hasError('min') && !control.get('page_number')?.hasError('required')">
+      <input type="number" matInput formControlName="pages" placeholder="Number of pages">
+      <mat-error *ngIf="control.get('pages')?.hasError('maxNumberOfPage') || control.get('pages')?.hasError('min') && !control.get('pages')?.hasError('required')">
         only positive numbers & max number 9999
       </mat-error>
-      <mat-error *ngIf="control.get('page_number')?.hasError('required')">
+      <mat-error *ngIf="control.get('pages')?.hasError('required')">
         Number of pages is <strong>required</strong>
       </mat-error>
     </mat-form-field>

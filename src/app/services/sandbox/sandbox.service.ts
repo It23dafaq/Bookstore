@@ -18,25 +18,24 @@ export class SandboxService {
    * add new Book on db
    * @param data - new book
    */
-  addBook(data: Book[]): void{
+  addBook(data: Book[]): void {
     data.map(book => {
       this.bookService.addNewBook(book).subscribe(result => {
         console.log(result);
         if (!result.error){
-          this.snack.open('Book added Succecfully', '');
+          this.openSnack('Book added Successfully');
         }else{
-          this.snack.open('Something went wrong', '');
+          this.openSnack('Something went wrong');
         }
       });
     });
-     // this.bookService.addNewBook(data).subscribe(result => {
-     //    console.log(result);
-     //    if (!result.error){
-     //      this.snack.open('Book added Succecfully', '');
-     //    }else{
-     //      this.snack.open('Something went wrong', '');
-     //    }
-     // });
+  }
 
+  /**
+   * Open snack Bar
+   * @param message - Message to Preview
+   */
+  openSnack(message: string): void{
+    this.snack.open(message, '');
   }
 }

@@ -39,7 +39,7 @@ export class BookCardComponent implements OnInit {
       });
     }else{
       this.storage.setSelectedBook(Keys.selected_book, this.data as Book);
-      this.router.navigateByUrl(`home/category/${this.data?.isbn}`);
+      this.router.navigateByUrl(`home/category`);
     }
   }
 }
