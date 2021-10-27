@@ -18,6 +18,5 @@ export class BookPreviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.Book =  this.storage.getSelectedBook(Keys.selected_book) as Book ;
-    console.log(this.Book);
   }
 }

@@ -117,7 +117,7 @@ export class BookService {
    */
   addNewBook(data: Book): Observable<any>{
     const form = this.mapService.mapBooks(data);
-    console.log(form);
+
     return this.http.post('http://localhost:3000/books', form).pipe(
       catchError(this.handleError('addBook', data))
    );
