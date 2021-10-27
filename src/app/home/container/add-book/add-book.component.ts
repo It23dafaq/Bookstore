@@ -32,4 +32,7 @@ export class AddBookComponent implements OnInit {
   onAddnewBook(): void{
      this.formArray.push(this.fb.group({}, ));
   }
+  removeBook(index: number): void{
+    this.formArray.removeAt(index);
+  }
 }

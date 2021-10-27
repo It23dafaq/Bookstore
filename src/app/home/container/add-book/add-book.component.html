@@ -1,8 +1,13 @@
 
 <form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="bookForm" >
-  <ng-container *ngFor="let control of controls">
+  <ng-container *ngFor="let control of controls;index as i;">
     <div [formGroup]="control" class="width-70">
       <app-book-form></app-book-form>
+      <div *ngIf="controls.length>1" fxLayout="row" fxLayoutAlign="center start" class="m-bottom">
+        <button mat-icon-button class="example-icon ml-20" aria-label="Example icon-button with share icon" (click)="removeBook(i)">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+      </div>
     </div>
   </ng-container>
   <div fxLayout="row" fxLayoutAlign="end start" class="width-70">
